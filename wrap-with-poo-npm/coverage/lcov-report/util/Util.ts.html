@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for util/Util.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">util</a> Util.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>69/115</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.22% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>19/45</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>15/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">58.93% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>66/112</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231</td><td class="line-coverage quiet"><span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">33x</span>
+<span class="cline-any cline-yes">33x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">147x</span>
+<span class="cline-any cline-yes">147x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">147x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">145x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Vue from 'vue';
+import moment from 'moment';
+&nbsp;
+const isCharUppercase = (char: string): boolean =&gt; {
+  return `${char}` === char.toUpperCase();
+};
+&nbsp;
+const hasUppercaseChars = (<span class="fstat-no" title="function not covered" >str: string): boolean =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  return str.split('').reduce(<span class="fstat-no" title="function not covered" >(a</span>cc: boolean, curr) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (isCharUppercase(curr)) {</span>
+<span class="cstat-no" title="statement not covered" >      acc = true;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return acc;</span>
+  }, false);
+};
+&nbsp;
+export class StringConverter {
+  static titleCase(title: string | string[]): string | string[] {
+    try {
+      let titles: string | string[];
+&nbsp;
+      if (Array.isArray(title)) {
+        const arrayOfTitles: string[] = [];
+        title.forEach(item =&gt; {
+          const titleString = item.split(/(?=[A-Z])/).join(' ');
+          const titleStrings = titleString.split(' ');
+          for (let i = 0; i &lt; titleStrings.length; i++) {
+            titleStrings[i] = StringConverter.capitalize(titleStrings[i]);
+          }
+          arrayOfTitles.push(titleStrings.join(' '));
+        });
+&nbsp;
+        titles = arrayOfTitles;
+      } else {
+        const titleString = title.split(/(?=[A-Z])/).join(' ');
+        const titleStrings = titleString.split(' ');
+        for (let i = 0; i &lt; titleStrings.length; i++) {
+          titleStrings[i] = StringConverter.capitalize(titleStrings[i]);
+        }
+        titles = titleStrings.join(' ');
+      }
+&nbsp;
+      return titles;
+    } catch (ex) {
+<span class="cstat-no" title="statement not covered" >      Vue.$log.warn(`Unable to capitalize string "${title}"`);</span>
+<span class="cstat-no" title="statement not covered" >      return title;</span>
+    }
+  }
+&nbsp;
+  static capitalize(str: string): string {
+    try {
+      return `${str[0].toUpperCase()}${str.substr(1)}`;
+    } catch (ex) {
+<span class="cstat-no" title="statement not covered" >      Vue.$log.warn(`Unable to capitalize string "${str}"`);</span>
+<span class="cstat-no" title="statement not covered" >      return str;</span>
+    }
+  }
+&nbsp;
+  static camelToHuman(str: string): string {
+    try {
+      const parts = &lt;string[]&gt;[];
+      let processed = false;
+&nbsp;
+      while (!processed) {
+        const splitIndex = str.split('').findIndex(c =&gt; isCharUppercase(c));
+&nbsp;
+        if (splitIndex !== -1) {
+          parts.push(str.substr(0, splitIndex));
+          str = str[splitIndex].toLowerCase() + str.substr(splitIndex + 1);
+        } else {
+          processed = true;
+        }
+      }
+&nbsp;
+      parts.push(str);
+&nbsp;
+      return parts
+        .map((p, index) =&gt; {
+          if (index !== 0) { return p; }
+          return StringConverter.capitalize(p);
+        })
+        .join(' ');
+    } catch (ex) {
+<span class="cstat-no" title="statement not covered" >      Vue.$log.warn(`Unable to convert string "${str}" with camelToHuman`);</span>
+<span class="cstat-no" title="statement not covered" >      return str;</span>
+    }
+  }
+&nbsp;
+  static kebabToHuman(str: string): string {
+    try {
+      return str
+        .split('-')
+        .map((s, index) =&gt; {
+          if (index !== 0) { return s; }
+          return StringConverter.capitalize(s);
+        })
+        .join(' ');
+    } catch (ex) {
+<span class="cstat-no" title="statement not covered" >      Vue.$log.warn(`Unable to convert string "${str}" with kebabToHuman`);</span>
+<span class="cstat-no" title="statement not covered" >      return str;</span>
+    }
+  }
+&nbsp;
+  static truncate(str: string, length: number): string {
+    return str.length &gt; length ? str.substring(0, length) + '…' : str;
+  }
+}
+&nbsp;
+export default class Util {
+  static stringConvert = StringConverter;
+&nbsp;
+  static deepAccess(item: object, key: string): any {
+    /*
+      Accessor example:
+        property.subProperty.subsubProperty
+    */
+    try {
+      const isAccessor: boolean = key.includes('.');
+&nbsp;
+      if (isAccessor) {
+        const keys: string[] = key.split('.');
+&nbsp;
+        return keys.reduce((acc, curr) =&gt; {
+          return acc[curr];
+        }, item);
+      } else {
+        return item[key];
+      }
+    } catch (ex) {
+      Vue.$log.warn(ex);
+      return null;
+    }
+  }
+&nbsp;
+  static formatDate(value: string | number): string | number {
+    try {
+      const d = moment.utc(value);
+&nbsp;
+      if (d.isValid()) {
+        return d.format('YYYY-MM-DD hh:mm:ss z');
+      } else {
+        throw new Error('Invalid date');
+      }
+    } catch (ex) {
+      Vue.$log.warn(
+        `Could not format date string. Falling back to provided value: ${value}. `
+      );
+      return value ? value : <span class="branch-1 cbranch-no" title="branch not covered" >'-';</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  static </span>isNumber(value: any): boolean {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      return Number.isInteger(value) &amp;&amp; !isNaN(value);</span>
+    } catch (ex) {
+<span class="cstat-no" title="statement not covered" >      Vue.$log.error(ex);</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  static </span>removeHyphenFromObject(obj: object): object {
+    const fixName = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >str</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      return str.replace(/(\-)([a-z])/g, <span class="fstat-no" title="function not covered" >(m</span>atch, p1, p2) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return p2.toUpperCase();</span>
+      });
+    };
+<span class="cstat-no" title="statement not covered" >    return Object.keys(obj).map(<span class="fstat-no" title="function not covered" >objKey</span> =&gt; {</span>
+      const currentObj = <span class="cstat-no" title="statement not covered" >obj[objKey];</span>
+<span class="cstat-no" title="statement not covered" >      return Object.keys(currentObj).reduce(<span class="fstat-no" title="function not covered" >(a</span>cc, key) =&gt; {</span>
+        let nested;
+<span class="cstat-no" title="statement not covered" >        if (typeof currentObj[key] === 'object') {</span>
+<span class="cstat-no" title="statement not covered" >          nested = Object.keys(currentObj[key]).reduce(</span>
+<span class="fstat-no" title="function not covered" >            (a</span>cc2, key2) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+              ...acc2,
+              ...{ [fixName(key2)]: currentObj[key][key2] }
+            }),
+            {}
+          );
+        }
+<span class="cstat-no" title="statement not covered" >        return {</span>
+          ...acc,
+          ...{ [fixName(key)]: nested !== undefined ? nested : currentObj[key] }
+        };
+      }, {});
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  static </span>getFileSize(value: number) {
+<span class="cstat-no" title="statement not covered" >    if (value &gt;= 0) {</span>
+<span class="cstat-no" title="statement not covered" >      if (value === 0) {</span>
+<span class="cstat-no" title="statement not covered" >        return 0 + 'KB';</span>
+      } else <span class="cstat-no" title="statement not covered" >if (value &lt; 1000) {</span>
+<span class="cstat-no" title="statement not covered" >        return (1 + ' KB');</span>
+      } else <span class="cstat-no" title="statement not covered" >if (value &lt; 1000000) {</span>
+<span class="cstat-no" title="statement not covered" >        return (Math.floor(value / 1000) + ' KB');</span>
+      } else <span class="cstat-no" title="statement not covered" >if (value &lt; 1000000000) {</span>
+<span class="cstat-no" title="statement not covered" >        return (Math.floor(value / 1000000) + ' MB');</span>
+      } else <span class="cstat-no" title="statement not covered" >if (value &lt; 1000000000000) {</span>
+<span class="cstat-no" title="statement not covered" >        return (Math.floor(value / 1000000000) + ' GB');</span>
+      } else <span class="cstat-no" title="statement not covered" >if (value &lt; 1000000000000000) {</span>
+<span class="cstat-no" title="statement not covered" >        return (Math.floor(value / 1000000000000) + ' TB');</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        return value;</span>
+      }
+    } else {
+<span class="cstat-no" title="statement not covered" >      return '';</span>
+    }
+  }
+&nbsp;
+  static sortAlphabetical(list: any[], sortKey: string | number = <span class="branch-0 cbranch-no" title="branch not covered" >0) {</span>
+    return list.sort((item, nextItem) =&gt; {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof item[sortKey] === 'string') {
+        const itemA = item[sortKey].toLowerCase();
+        const itemB = nextItem[sortKey].toLowerCase();
+        if (itemA &lt; itemB) {
+          return -1;
+        } else <span class="missing-if-branch" title="else path not taken" >E</span>if (itemA &gt; itemB) {
+          return 1;
+        } else {
+<span class="cstat-no" title="statement not covered" >          return 0;</span>
+        }
+      } else {
+        const error = <span class="cstat-no" title="statement not covered" >`Util.sortAlphabetical() expected the value of sort key: '${sortKey}' to be a string.`;</span>
+        const message = <span class="cstat-no" title="statement not covered" >`The value received is ${typeof item[sortKey]}.`;</span>
+<span class="cstat-no" title="statement not covered" >        Vue.$log.error(error + ' ' + message);</span>
+<span class="cstat-no" title="statement not covered" >        return item - nextItem;</span>
+      }
+    });
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jun 09 2020 14:01:26 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

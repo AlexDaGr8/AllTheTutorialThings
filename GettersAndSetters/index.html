@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="border: solid blue;"></div>
+    <script src="person.js"></script>
+    <script>
+        console.log('hi')
+        var person = new Person('Alex', 'Hinton');
+        console.log(person.fullName)
+        person.fullName = 'John Smith';
+
+
+        // using a proxy
+        var names = Object.getOwnPropertyNames(Person.prototype);
+
+        var getters = names.filter((name) => {
+            var result = Object.getOwnPropertyDescriptor(Person.prototype, name);
+            return !!result.get;
+        })
+
+        var setters = names.filter((name) => {
+            var result = Object.getOwnPropertyDescriptor(Person.prototype, name);
+            return !!result.set
+        })
+
+        var handler = {
+            get(target, name) {
+                if (getters.indexOf(name) !== 1) {
+                    return target[name];
+                }
+                throw new Error('Getter "' + name + '" not found in "Person"');
+            },
+
+            set(target, name) {
+                if (setters.indexOf(name) !== -1) {
+                    return target[name]
+                }
+                throw new Error('Setter "' + name + '" not found in "Person"');
+            }
+        }
+
+        person = new Proxy(person, handler);
+        //person.fulName = 'Alex Hinton';
+        console.log('proxy fail', person.fulName)
+    </script>
+</body>
+</html>

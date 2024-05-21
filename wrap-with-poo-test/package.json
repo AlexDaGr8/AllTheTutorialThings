@@ -1,0 +1,19 @@
+{
+  "name": "wrap-with-poo-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "poo": "npm run wrap-with-poo"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "wrap-with-poo": "^0.1.0"
+  },
+  "devDependencies": {
+    "@olavoparno/jest-badges-readme": "^1.4.1"
+  }
+}

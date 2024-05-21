@@ -1,0 +1,890 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for store/PersonasStore.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">store</a> PersonasStore.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">99.21% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>125/126</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">91.3% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>21/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>14/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">99.19% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>123/124</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276</td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Vue from 'vue';
+import CoreClient from '@/services/CoreClient';
+import Core from '@/types/core.d.ts';
+import PotentialPersonasExtractor from '@/views/personas/PotentialPersonasExtractor';
+&nbsp;
+import {
+  PERMISSION_NAMESPACE,
+  PERMISSION_NAME
+} from '@/constants/core.constants';
+&nbsp;
+export interface PersonasState {
+  personas: Core.Persona[];
+  schema: string[];
+  csvPreviewResult?: any;
+  csvResult?: any;
+  fetchError?: string | null;
+}
+&nbsp;
+export enum PersonaMutations {
+  SET_PERSONAS = 'setPersonas',
+  UPSERT_PERSONA = 'upsertPersona',
+  REMOVE_PERSONA = 'removePersona',
+  CLEAR_PERSONAS = 'clearPersonas',
+&nbsp;
+  SET_CSV_PREVIEW_RESULT = 'setCsvPreviewResult',
+  CLEAR_CSV_PREVIEW_RESULT = 'clearCsvPreviewResult',
+&nbsp;
+  SET_CSV_RESULT = 'setCsvResult',
+  CLEAR_CSV_RESULT = 'clearCsvResult',
+&nbsp;
+  SET_SCHEMA = 'setSchema',
+&nbsp;
+  SET_FETCH_ERROR = 'setFetchError'
+}
+&nbsp;
+export enum PersonaActions {
+  GET_PERSONAS = 'getPersonas',
+  GET_PERSONA = 'getPersona',
+  DELETE_PERSONA = 'deletePersona',
+  CREATE_PERSONA = 'createPersona',
+  ARCHIVE_PERSONA = 'archivePersona',
+  UNARCHIVE_PERSONA = 'unarchivePersona',
+  SET_AUTO_GEOSITE = 'setAutoGeosite',
+  ADD_MULTIPLE_PERSONAS = 'addMultiplePersonas',
+  ADD_MULTIPLE_PERSONAS_PREVIEW = 'addMultiplePersonasPreview',
+  GET_DEFAULT = 'getDefault',
+  GET_SCHEMA = 'getSchema',
+  PERSONAS_NOTIFICATION_RESPONSE = 'personasNotificationResponse'
+}
+&nbsp;
+export enum PERSONA_NOTIFICATION_EVENT {
+  CREATED = 'created',
+  ACTIVATED = 'activated',
+  DEACTIVATED = 'deactivated',
+  UPDATED = 'updated',
+  DELETED = 'deleted'
+}
+&nbsp;
+export type PersonaNotificationEvent =
+  PERSONA_NOTIFICATION_EVENT.CREATED
+  | PERSONA_NOTIFICATION_EVENT.ACTIVATED
+  | PERSONA_NOTIFICATION_EVENT.DEACTIVATED
+  | PERSONA_NOTIFICATION_EVENT.UPDATED
+  | PERSONA_NOTIFICATION_EVENT.DELETED;
+&nbsp;
+export const mutations = {
+  setFetchError(state: PersonasState, error: string | null): void {
+    Vue.set(state, 'fetchError', error);
+  },
+  setPersonas(state: PersonasState, personas: Core.Persona[]): void {
+    Vue.set(state, 'personas', personas);
+  },
+  upsertPersona(state: PersonasState, persona: Core.Persona): void {
+    const existing = state.personas.find(p =&gt; p.id === persona.id);
+    if (existing) {
+      const updatedPersona = Object.assign(existing, persona);
+      state.personas.splice(
+        state.personas.indexOf(existing),
+        1,
+        updatedPersona
+      );
+    } else {
+      state.personas.push(persona);
+    }
+  },
+  setCsvPreviewResult(state: PersonasState, csvPreviewResult: any): void {
+    // reorder the details to match the schema
+    csvPreviewResult.map((item: any) =&gt; {
+      const { details } = item;
+      const reorderedDetails = {};
+      // codename is a part of the schema but not a detail
+      // we do not want to include it in the reorder
+      const [codename, ...schema] = state.schema;
+      schema.forEach(key =&gt; reorderedDetails[key] = details[key]);
+      item.details = { ...reorderedDetails, ...details };
+      return item;
+    });
+&nbsp;
+    Vue.set(
+      state,
+      'csvPreviewResult',
+      PotentialPersonasExtractor.extract(csvPreviewResult)
+    );
+  },
+  clearCsvPreviewResult(state: PersonasState): void {
+    Vue.set(state, 'csvPreviewResult', null);
+  },
+  setCsvResult(state: PersonasState, csvResult: any): void {
+    Vue.set(state, 'csvResult', PotentialPersonasExtractor.extract(csvResult));
+  },
+  clearCsvResult(state: PersonasState): void {
+    Vue.set(state, 'csvResult', null);
+  },
+  removePersona(state: PersonasState, personaId: number): void {
+    Vue.set(
+      state,
+      'personas',
+      state.personas.filter(p =&gt; {
+        return p.id !== personaId;
+      })
+    );
+  },
+  clearPersonas(state: PersonasState): void {
+    Vue.set(state, 'personas', []);
+  },
+  setSchema(state: PersonasState, schema: string[]): void {
+    Vue.set(state, 'schema', schema);
+  }
+};
+&nbsp;
+export const actions = {
+  async getPersonas({ commit }) {
+    try {
+      const personas = await CoreClient.personas.getPersonas();
+      commit(PersonaMutations.SET_PERSONAS, personas);
+      commit(PersonaMutations.SET_FETCH_ERROR, null);
+    } catch (error) {
+      commit(PersonaMutations.SET_FETCH_ERROR, error.message);
+    }
+  },
+  async getPersona({ commit }, personaId: number) {
+    const persona = await CoreClient.personas.getPersona(personaId);
+    commit(PersonaMutations.UPSERT_PERSONA, persona);
+  },
+  async deletePersona({ commit }, personaId: number) {
+    await CoreClient.personas.deletePersona(personaId);
+    commit(PersonaMutations.REMOVE_PERSONA, personaId);
+  },
+  async createPersona({ commit }, personaDto: Core.PersonaDto) {
+    const persona = await CoreClient.personas.createPersona(personaDto);
+    commit(PersonaMutations.UPSERT_PERSONA, persona);
+  },
+  async archivePersona({ commit }, personaId: number) {
+    const persona = await CoreClient.personas.updatePersona(personaId, {
+      archived: true
+    });
+&nbsp;
+    commit(PersonaMutations.UPSERT_PERSONA, persona);
+  },
+  async unarchivePersona({ commit }, personaId: number) {
+    const persona = await CoreClient.personas.updatePersona(personaId, {
+      archived: false
+    });
+&nbsp;
+    commit(PersonaMutations.UPSERT_PERSONA, persona);
+  },
+  async setAutoGeosite({ commit }, geositeId: number) {
+    await CoreClient.personas.setAutoConnectGeosite(geositeId);
+  },
+  async addMultiplePersonas({ commit, dispatch }, file: File) {
+    const resp = await CoreClient.personas.addMultiplePersonas(file, false);
+    commit(PersonaMutations.SET_CSV_RESULT, resp);
+&nbsp;
+    dispatch(PersonaActions.GET_PERSONAS);
+  },
+  async addMultiplePersonasPreview({ commit }, file: File) {
+    const resp = await CoreClient.personas.addMultiplePersonas(file, true);
+    commit(PersonaMutations.SET_CSV_PREVIEW_RESULT, resp);
+  },
+  async getDefault({ commit }) {
+    const persona = await CoreClient.personas.getDefaultPersona();
+    commit(PersonaMutations.UPSERT_PERSONA, persona);
+  },
+  async getSchema({ commit }) {
+    const schema = await CoreClient.personas.getPersonaSchema();
+    commit(PersonaMutations.SET_SCHEMA, ['codename', ...schema]);
+  },
+  personasNotificationResponse(
+    { commit, getters },
+    notification: {
+      event: PersonaNotificationEvent,
+      data: Core.Persona
+    }) {
+    const { event } = notification;
+    const { data } = notification;
+    const personaId = data.id;
+    const personaExists = !!getters.getPersonaById(personaId);
+    switch (event) {
+      case PERSONA_NOTIFICATION_EVENT.CREATED:
+        commit(PersonaMutations.UPSERT_PERSONA, data);
+        break;
+      case PERSONA_NOTIFICATION_EVENT.ACTIVATED:
+        Vue.set(data, 'isInUse', true);
+        commit(PersonaMutations.UPSERT_PERSONA, data);
+        break;
+      case PERSONA_NOTIFICATION_EVENT.DEACTIVATED:
+        Vue.set(data, 'isInUse', false);
+        commit(PersonaMutations.UPSERT_PERSONA, data);
+        break;
+      case PERSONA_NOTIFICATION_EVENT.UPDATED:
+        commit(PersonaMutations.UPSERT_PERSONA, data);
+        break;
+      case PERSONA_NOTIFICATION_EVENT.DELETED:
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (personaExists) {
+          commit(PersonaMutations.REMOVE_PERSONA, personaId);
+        }
+        break;
+<span class="branch-5 cbranch-no" title="branch not covered" >      default:</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+    }
+  }
+};
+&nbsp;
+export const getters = {
+  getPersonaById: (state: PersonasState) =&gt; (personaId: number) =&gt; {
+    const persona = state.personas.find(
+      (p: Core.Persona) =&gt; p.id === personaId
+    );
+    return persona;
+  },
+  getUserPersonas: (state: PersonasState, getters) =&gt; (userId: number) =&gt; {
+    const userPermissions: Core.Permission[] = getters.getUserPermissions(
+      userId
+    );
+&nbsp;
+    const assignedPersonas: Core.Persona[] = [];
+    const availablePersonas: Core.Persona[] = [];
+&nbsp;
+    state.personas.forEach(persona =&gt; {
+      let assigned = false;
+&nbsp;
+      userPermissions.forEach(perm =&gt; {
+        const isPersonaPerm =
+          perm.permissionType.namespace === PERMISSION_NAMESPACE.WORKSPACE;
+        const canUse = perm.permissionType.name === PERMISSION_NAME.USE;
+        const matchingEntity = perm.entityId === persona.id;
+&nbsp;
+        if (isPersonaPerm &amp;&amp; canUse &amp;&amp; matchingEntity) {
+          assignedPersonas.push(persona);
+          assigned = true;
+        }
+      });
+&nbsp;
+      if (!assigned) {
+        availablePersonas.push(persona);
+      }
+    });
+&nbsp;
+    return {
+      assigned: assignedPersonas,
+      available: availablePersonas
+    };
+  }
+};
+&nbsp;
+const PersonasStore = {
+  state: {
+    personas: []
+  },
+  mutations,
+  actions,
+  getters
+};
+&nbsp;
+export default PersonasStore;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jun 09 2020 14:01:26 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

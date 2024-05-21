@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for store/SettingsStore.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">store</a> SettingsStore.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.5% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>74/80</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>20/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>16/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.5% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>74/80</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+import Vue from 'vue';
+import CoreClient from '@/services/CoreClient';
+import AdminClient from '@/services/AdminClient';
+import Core from '@/types/core.d.ts';
+import { ROLES, SETTING_SCOPE } from '@/constants/core.constants';
+&nbsp;
+export interface SettingsState {
+  settings: Core.Setting[];
+}
+&nbsp;
+export enum SettingMutations {
+  SET_SETTINGS = 'setSettings',
+  UPSERT_SETTING = 'upsertSetting',
+  REMOVE_SETTING = 'removeSetting',
+  CLEAR_SETTINGS = 'clearSettings'
+}
+&nbsp;
+export enum SettingActions {
+  GET_SETTINGS = 'getSettings',
+  GET_SETTING = 'getSetting',
+  SET_SETTING = 'setSetting',
+  DELETE_SETTING = 'deleteSetting',
+&nbsp;
+  ADMIN_UPDATE_SETTING = 'adminUpdateSetting',
+  ADMIN_RESTORE_DEFAULT = 'adminRestoreDefault',
+&nbsp;
+  SETTINGS_NOTIFICATION_RESPONSE = 'settingsNotificationResponse'
+}
+&nbsp;
+const findSetting = (
+  settings: Core.Setting[],
+  name: string,
+  scope: string,
+  groupName: string
+) =&gt; {
+  return settings.find(s =&gt; {
+    const sameName = s.name === name;
+    let sameScope = s.scope === scope;
+    const sameGroup = s.groupName === groupName;
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (s.scope === SETTING_SCOPE.DEPLOYMENT || scope === SETTING_SCOPE.DEPLOYMENT) {
+<span class="cstat-no" title="statement not covered" >      sameScope = true;</span>
+    }
+&nbsp;
+    return sameName &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >sameScope &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >sameGroup;</span></span>
+  });
+};
+&nbsp;
+export const mutations = {
+  setSettings(state: SettingsState, settings: Core.Setting[]): void {
+    settings.forEach(s =&gt; {
+      const existing = findSetting(
+        state.settings,
+        s.name,
+        s.scope,
+        s.groupName
+      );
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (!existing) {
+        state.settings.push(s);
+      } else {
+<span class="cstat-no" title="statement not covered" >        state.settings.splice(state.settings.indexOf(s), 1, s);</span>
+      }
+    });
+  },
+  upsertSetting(state: SettingsState, setting: Core.Setting): void {
+    const existing = findSetting(
+      state.settings,
+      setting.name,
+      setting.scope,
+      setting.groupName
+    );
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!existing) {
+      state.settings.push(&lt;Core.Setting&gt;setting);
+    } else {
+      const updatedSetting: Core.Setting = <span class="cstat-no" title="statement not covered" >Object.assign(existing, setting);</span>
+<span class="cstat-no" title="statement not covered" >      state.settings.splice(</span>
+        state.settings.indexOf(&lt;Core.Setting&gt;existing),
+        1,
+        updatedSetting
+      );
+    }
+  },
+  removeSetting(state: SettingsState, { name, scope }): void {
+    Vue.set(
+      state,
+      'settings',
+      state.settings.filter(s =&gt; {
+        const sameName = s.name === name;
+        const sameScope = s.scope === scope;
+&nbsp;
+        if (sameName &amp;&amp; sameScope) {
+          return false;
+        } else {
+          return true;
+        }
+      })
+    );
+  },
+  clearSettings(state: SettingsState): void {
+    Vue.set(state, 'settings', []);
+  }
+};
+&nbsp;
+export const actions = {
+  async getSettings({ commit }) {
+    const settingGroups = await AdminClient.settings.getSettings();
+&nbsp;
+    const allSettings = Object.keys(settingGroups).reduce((acc, groupName) =&gt; {
+      return acc.concat(settingGroups[groupName]);
+    }, []);
+&nbsp;
+    commit(SettingMutations.SET_SETTINGS, allSettings);
+  },
+  async getSetting({ commit }, { name, scope }) {
+    const setting = await CoreClient.settings.getSetting(name, scope);
+    commit(SettingMutations.UPSERT_SETTING, setting);
+  },
+  async setSetting({ commit }, { name, scope, value }) {
+    const setting = await CoreClient.settings.setSetting(name, scope, value);
+    commit(SettingMutations.UPSERT_SETTING, setting);
+  },
+  async deleteSetting({ commit }, { name, scope }) {
+    await CoreClient.settings.deleteSetting(name, scope);
+    commit(SettingMutations.REMOVE_SETTING, { name, scope });
+  },
+  async adminUpdateSetting({ commit }, setting: Core.Setting) {
+    const updatedSetting = await AdminClient.settings.updateSetting(setting);
+    commit(SettingMutations.UPSERT_SETTING, updatedSetting);
+  },
+  async adminRestoreDefault({ dispatch }, setting: Core.Setting) {
+    await AdminClient.settings.deleteSetting(setting);
+&nbsp;
+    // This dispatch is included so we can update the user's UI
+    // in the instance that socket-io is not connected.
+&nbsp;
+    // We must check that the scope === CUSTOMER to prevent
+    // calling the settings api with a DEPLOYMENT scope */
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (setting.scope === SETTING_SCOPE.CUSTOMER) {
+      dispatch(SettingActions.GET_SETTING, setting);
+    }
+  },
+  settingsNotificationResponse({ commit }, setting: Core.Setting) {
+    commit(SettingMutations.UPSERT_SETTING, setting);
+  }
+};
+&nbsp;
+export const getters = {
+  getSettings: (state: SettingsState) =&gt; () =&gt; {
+    return state.settings;
+  },
+  getSettingsByScope: (state: SettingsState) =&gt; (scope: string) =&gt; {
+    return state.settings.filter(s =&gt; {
+      return s.scope === scope;
+    });
+  },
+  getSettingsByGroup: (state: SettingsState) =&gt; (groupName: string, vm = <span class="branch-0 cbranch-no" title="branch not covered" >Vue) =&gt; {</span>
+    return state.settings
+      .filter(s =&gt; {
+        const isAdmin = vm.$authorize([ROLES.ADMIN]);
+        const isVisible = s.customerVisible || <span class="branch-1 cbranch-no" title="branch not covered" >isAdmin;</span>
+        const groupMatch = s.groupName === groupName;
+&nbsp;
+        return isVisible &amp;&amp; groupMatch;
+      })
+      .sort((a, b) =&gt; {
+        const normalizedA = a.displayName.toUpperCase();
+        const normalizedB = b.displayName.toUpperCase();
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (normalizedA &lt; normalizedB) {
+<span class="cstat-no" title="statement not covered" >          return -1;</span>
+        }
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (normalizedA &gt; normalizedB) {
+<span class="cstat-no" title="statement not covered" >          return 1;</span>
+        }
+        return 0;
+      });
+  }
+};
+&nbsp;
+const SettingsStore = {
+  state: {
+    settings: []
+  },
+  mutations,
+  actions,
+  getters
+};
+&nbsp;
+export default SettingsStore;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jun 09 2020 14:01:26 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

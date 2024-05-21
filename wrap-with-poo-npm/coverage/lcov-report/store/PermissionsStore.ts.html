@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for store/PermissionsStore.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">store</a> PermissionsStore.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.02% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>99/101</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>22/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>20/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>98/100</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220</td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Vue from 'vue';
+import CoreClient from '@/services/CoreClient';
+import Core from '@/types/core.d.ts';
+&nbsp;
+import {
+  PERMISSION_NAMESPACE,
+  PERMISSION_NAME,
+  VIDEO_STATUS
+} from '@/constants/core.constants';
+&nbsp;
+export interface PermissionsState {
+  permissions: Core.Permission[];
+}
+&nbsp;
+export enum PermissionMutations {
+  SET_PERMISSIONS = 'setPermissions',
+  UPSERT_PERMISSION = 'upsertPermission',
+  REMOVE_PERMISSION = 'removePermission',
+  CLEAR_PERMISSIONS = 'clearPermissions'
+}
+&nbsp;
+export enum PermissionActions {
+  GET_PERMISSIONS = 'getPermissions',
+  GET_PERMISSION = 'getPermission',
+  CREATE_PERMISSION = 'createPermission',
+  DELETE_PERMISSION = 'deletePermission',
+&nbsp;
+  USER_ADD_PERSONA = 'userAddPersona',
+  USER_REMOVE_PERSONA = 'userRemovePersona',
+  USER_ENABLE_INSIGHT = 'userEnableInsight',
+  USER_DISABLE_INSIGHT = 'userDisableInsight',
+&nbsp;
+  GROUP_GET_PERMISSIONS = 'groupGetPermissions',
+  GROUP_ADD_GEOSITE = 'groupAddGeosite',
+  GROUP_REMOVE_GEOSITE = 'groupRemoveGeosite',
+  GROUP_SET_VIDEO_STATUS = 'groupSetVideoStatus',
+&nbsp;
+  PERSONA_GET_PERMISSIONS = 'personaGetPermissions',
+  PERSONA_ADD_GEOSITE = 'personaAddGeosite',
+  PERSONA_REMOVE_GEOSITE = 'personaRemoveGeosite'
+}
+&nbsp;
+export const mutations = {
+  setPermissions(
+    state: PermissionsState,
+    permissions: Core.Permission[]
+  ): void {
+    permissions.forEach(p =&gt; {
+      mutations.upsertPermission(state, p);
+    });
+  },
+  upsertPermission(state: PermissionsState, permission: Core.Permission): void {
+    const existing = state.permissions.find(p =&gt; p.id === permission.id);
+    if (!existing) {
+      state.permissions.push(permission);
+    } else {
+      const updatedPermission = Object.assign(existing, permission);
+      state.permissions.splice(
+        state.permissions.indexOf(existing),
+        1,
+        updatedPermission
+      );
+    }
+  },
+  removePermission(state: PermissionsState, permissionId: number): void {
+    Vue.set(
+      state,
+      'permissions',
+      state.permissions.filter(p =&gt; {
+        return p.id !== permissionId;
+      })
+    );
+  },
+  clearPermissions(state: PermissionsState): void {
+    Vue.set(state, 'permissions', []);
+  }
+};
+&nbsp;
+export const actions = {
+  async getPermissions({ commit }) {
+    const perms = await CoreClient.permissions.getPermissions();
+    commit(PermissionMutations.SET_PERMISSIONS, perms);
+  },
+  async getPermission({ commit }, permissionId: number) {
+    const perm = await CoreClient.permissions.getPermissionById(permissionId);
+    commit(PermissionMutations.UPSERT_PERMISSION, perm);
+  },
+  async createPermissions({ commit }, permission: Core.Permission) {
+    const perm = await CoreClient.permissions.createPermission(permission);
+    commit(PermissionMutations.UPSERT_PERMISSION, perm);
+  },
+  async deletePermission({ commit }, permissionId: number) {
+    await CoreClient.permissions.deletePermission(permissionId);
+    commit(PermissionMutations.REMOVE_PERMISSION, permissionId);
+  },
+&nbsp;
+  async userAddPersona({ commit }, { userId, personaId }) {
+    const perm = await CoreClient.users.addPersona(userId, personaId);
+    commit(PermissionMutations.UPSERT_PERMISSION, perm);
+  },
+  async userRemovePersona({ commit, getters }, { userId, personaId }) {
+    const userPermissions = getters.getUserPermissions(userId);
+    const permId = await CoreClient.users.removePersona(
+      userId,
+      personaId,
+      userPermissions
+    );
+    commit(PermissionMutations.REMOVE_PERMISSION, permId);
+  },
+  async userEnableInsight({ commit }, userId: number) {
+    const perm = await CoreClient.users.enableInsight(userId);
+    commit(PermissionMutations.UPSERT_PERMISSION, perm);
+  },
+  async userDisableInsight({ commit, getters }, userId: number) {
+    const userPermissions = getters.getUserPermissions(userId);
+    const permId = await CoreClient.users.disableInsight(
+      userId,
+      userPermissions
+    );
+    commit(PermissionMutations.REMOVE_PERMISSION, permId);
+  },
+&nbsp;
+  async groupGetPermissions({ commit }, groupId) {
+    const perms = await CoreClient.permissions.getGroupPermissions(groupId);
+    commit(PermissionMutations.SET_PERMISSIONS, perms);
+  },
+  async groupAddGeosite({ commit }, { groupId, geositeId }) {
+    const perm = await CoreClient.groups.addGeosite(groupId, geositeId);
+    commit(PermissionMutations.UPSERT_PERMISSION, perm);
+  },
+  async groupRemoveGeosite({ commit }, { groupId, geositeId }) {
+    const permId = await CoreClient.groups.removeGeosite(groupId, geositeId);
+    commit(PermissionMutations.REMOVE_PERMISSION, permId);
+  },
+  async groupSetVideoStatus({ dispatch }, { groupId, videoStatus }) {
+    const oldPerms: Core.Permission[] = await CoreClient.groups.removeOldVideoStatus(groupId);
+    await oldPerms.forEach(oldPerm =&gt; {
+      dispatch(PermissionActions.DELETE_PERMISSION, oldPerm.id);
+    });
+&nbsp;
+    await CoreClient.groups.setVideoStatus(groupId, videoStatus);
+  },
+  async personaGetPermissions({ commit }, personaId) {
+    const perms = await CoreClient.permissions.getPersonaPermissions(personaId);
+    commit(PermissionMutations.SET_PERMISSIONS, perms);
+  },
+  async personaAddGeosite({ commit }, { personaId, geositeId }) {
+    const perm = await CoreClient.personas.addGeosite(personaId, geositeId);
+    commit(PermissionMutations.UPSERT_PERMISSION, perm);
+  },
+  async personaRemoveGeosite({ commit }, { personaId, geositeId }) {
+    const permId = await CoreClient.personas.removeGeosite(
+      personaId,
+      geositeId
+    );
+    commit(PermissionMutations.REMOVE_PERMISSION, permId);
+  }
+};
+&nbsp;
+export const getters = {
+  getUserPermissions: (state: PermissionsState) =&gt; (userId: number) =&gt; {
+    const perms = state.permissions.filter(p =&gt; {
+      return p.user &amp;&amp; p.user.id === userId;
+    });
+&nbsp;
+    return perms;
+  },
+  getUserInsightAccess: (state: PermissionsState) =&gt; (userId: number) =&gt; {
+    const insightPerm = state.permissions.find(p =&gt; {
+      const userMatch = p.user &amp;&amp; p.user.id === userId;
+      const namespaceMatch =
+        p.permissionType.namespace === PERMISSION_NAMESPACE.INSIGHT;
+      const nameMatch = p.permissionType.name === PERMISSION_NAME.USE;
+&nbsp;
+      return userMatch &amp;&amp; namespaceMatch &amp;&amp; nameMatch;
+    });
+&nbsp;
+    return insightPerm ? true : <span class="branch-1 cbranch-no" title="branch not covered" >false;</span>
+  },
+  getGroupVideoStatus: (state: PermissionsState) =&gt; (groupId: number) =&gt; {
+    const videoPerms = state.permissions.filter(p =&gt; {
+      const groupMatch = p.group &amp;&amp; p.group.id === groupId;
+      const namespaceMatch = (p.permissionType.namespace = PERMISSION_NAMESPACE.VIDEO);
+&nbsp;
+      return groupMatch &amp;&amp; namespaceMatch;
+    });
+&nbsp;
+    const automatic = videoPerms.find(
+      p =&gt; p.permissionType.name === PERMISSION_NAME.RECORD_AUTOMATICALLY
+    );
+    const manual = videoPerms.find(
+      p =&gt; p.permissionType.name === PERMISSION_NAME.RECORD_MANUALLY
+    );
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (automatic) {
+<span class="cstat-no" title="statement not covered" >      return VIDEO_STATUS.AUTOMATIC;</span>
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (manual) {
+      return VIDEO_STATUS.MANUAL;
+    } else {
+<span class="cstat-no" title="statement not covered" >      return VIDEO_STATUS.DISABLED;</span>
+    }
+  },
+  getGroupPermissions: (state: PermissionsState) =&gt; (groupId: number) =&gt; {
+    return state.permissions.filter(p =&gt; {
+      return p.group &amp;&amp; p.group.id === groupId;
+    });
+  }
+};
+&nbsp;
+const PermissionsStore = {
+  state: {
+    permissions: []
+  },
+  mutations,
+  actions,
+  getters
+};
+&nbsp;
+export default PermissionsStore;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jun 09 2020 14:01:26 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

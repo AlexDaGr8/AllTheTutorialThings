@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for components/global/layout/NavMenu.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">components/global/layout</a> NavMenu.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.26% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>18/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">72.73% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>16/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.26% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>18/23</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+  &lt;header id="main-nav-container" class="ui fixed inverted menu"&gt;
+    &lt;!--Branding--&gt;
+    &lt;router-link to="/" class="branding header item" exact-active-class="home"&gt;
+      &lt;img class="ui icon big" src="@/assets/img/admin-32-white.png" /&gt;
+      &lt;span class="title"&gt;{{productName}}&lt;/span&gt;
+    &lt;/router-link&gt;
+&nbsp;
+    &lt;!--Navigation w/ Mobile Menu--&gt;
+    &lt;div
+      id="main-nav"
+      class="ui right mobile"
+      :class="mobileMenu ? 'simple icon dropdown item' : 'menu'"
+    &gt;
+      &lt;i v-if="mobileMenu" class="bars large icon" title="Mobile Menu"&gt;&lt;/i&gt;
+&nbsp;
+      &lt;nav class="ui menu inverted" data-role="navigation"&gt;
+        &lt;router-link
+          v-for="item in menu"
+          :key="'nav-item-' + item.id"
+          :to="item.path"
+          :id="item.id"
+          :title="item.description"
+          class="item"
+          @click="itemClicked(item.id)"
+        &gt;
+          &lt;i v-if="item.icon || item.image" class="icon" :class="iconClass(item)"&gt;
+            &lt;img v-if="item.image" :src="item.image" class="ui image" /&gt;
+          &lt;/i&gt;
+          &lt;i
+            v-else-if="item.svg"
+            class="icon"
+            :style="{ '-webkit-mask': `url(${item.svg}) no-repeat center`, 'mask': `url(${item.svg}) no-repeat center`, backgroundColor: 'var(--svg-color)'}"
+          &gt;&lt;/i&gt;
+          &lt;span&gt;{{item.title}}&lt;/span&gt;
+        &lt;/router-link&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+&lt;/template&gt;
+&nbsp;
+&lt;script lang="ts"&gt;
+import Vue from 'vue';
+import { FEATURES } from '@/constants/core.constants';
+import { Route, RouteConfig } from 'vue-router';
+&nbsp;
+export interface RouterItemMeta {
+  page_id: string;
+  page_title: string;
+  page_description?: string;
+  page_icon?: string;
+  page_image?: string;
+  page_svg?: string;
+  main_nav?: boolean;
+  dynamic_index?: number;
+}
+&nbsp;
+export interface RouterItem extends RouteConfig {
+  meta: RouterItemMeta;
+  children?: RouterItem[];
+}
+&nbsp;
+export interface NavigationItem {
+  path: string;
+  id: string;
+  title: string;
+  description?: string;
+  icon?: string;
+  image?: string;
+  svg?: string;
+}
+&nbsp;
+declare var $: any;
+/**
+ * A navigation menu generated from the $router.options.routes  where
+ * `this.$root.$data.routerItems` is the Array of router items on the Vue instance,
+ * `main_nav: true` is the meta field used for nested child items to include,
+ * `main_nav: false` are parent routes to exclude
+ * `dynamic_index` is used to change dynamic routes default index with the array of nav menu items
+ * `navigationItem` is the interface used for the items.
+ */
+export default Vue.extend({
+  name: 'NavMenu',
+  data() {
+    return {
+      productName: 'Admin',
+      mobileMenu: false,
+      mobileBreakpoint: 560
+    };
+  },
+  computed: {
+    menu(): NavigationItem[] {
+      let navItems: NavigationItem[] = [];
+      const routerItems = this.$root.$data.routerItems;
+&nbsp;
+      routerItems.forEach((item: RouterItem, index) =&gt; {
+        if (item.meta.main_nav !== false) {
+          this.createNavItem(item, navItems);
+          if (item.children) {
+            item.children.forEach((childItem: RouterItem) =&gt; {
+<span class="missing-if-branch" title="if path not taken" >I</span>              if (childItem.meta.main_nav === true) {
+<span class="cstat-no" title="statement not covered" >                this.createNavItem(childItem, navItems);</span>
+              }
+            });
+          }
+        }
+      });
+      return navItems;
+    }
+  },
+  methods: {
+    createNavItem(item: RouterItem, navItems: NavigationItem[]): void {
+      const newItem = {
+        path: item.path,
+        id: item.meta.page_id,
+        title: item.meta.page_title,
+<span class="branch-1 cbranch-no" title="branch not covered" >        description: item.meta.page_description || '',</span>
+        icon: item.meta.page_icon || '',
+        image: item.meta.page_image || '',
+        svg: item.meta.page_svg || ''
+      };
+<span class="missing-if-branch" title="if path not taken" >I</span>      if (item.meta.dynamic_index) {
+<span class="cstat-no" title="statement not covered" >        const insertAtIndex: number = item.meta.dynamic_index;</span>
+<span class="cstat-no" title="statement not covered" >        navItems.splice(insertAtIndex, 0, newItem);</span>
+      } else {
+        navItems.push(newItem);
+      }
+    },
+    iconClass(item: NavigationItem): string | null {
+      return item.image ? '' : item.icon ? item.icon : null;
+    },
+    itemClicked(id: string): void {
+<span class="cstat-no" title="statement not covered" >      this.$emit('itemClicked', id);</span>
+    }
+  },
+  mounted() {
+    this.mobileMenu = false;
+<span class="branch-1 cbranch-no" title="branch not covered" >    $(window).width()! &lt; this.mobileBreakpoint</span>
+      ? (this.mobileMenu = true)
+      : (this.mobileMenu = false);
+<span class="fstat-no" title="function not covered" >    $(window).resize(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      $(window).width()! &lt; this.mobileBreakpoint</span>
+        ? (this.mobileMenu = true)
+        : (this.mobileMenu = false);
+    });
+  }
+});
+&lt;/script&gt;
+&nbsp;
+&lt;style lang="less" scoped&gt;
+#main-nav.ui.dropdown &gt; .ui.menu {
+  min-width: 300px;
+}
+&nbsp;
+.ui.inverted.menu {
+  .item {
+    --svg-color: var(--white);
+    &amp;.active {
+      --svg-color: var(--brand-light);
+    }
+    &amp;:hover {
+      --svg-color: var(--white);
+    }
+  }
+}
+&nbsp;
+@media screen and (min-width: 561px) and (max-width: 920px) {
+  nav[data-role='navigation'] {
+    i.icon {
+      font-size: 1.5em;
+    }
+    span {
+      display: none;
+    }
+  }
+}
+&lt;/style&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jun 09 2020 14:01:26 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

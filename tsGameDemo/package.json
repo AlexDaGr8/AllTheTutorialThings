@@ -1,0 +1,22 @@
+{
+  "name": "tssnek",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.ts",
+  "scripts": {
+    "start": "concurrently \"npm run build:live\" \"npm run serve\"",
+    "serve": "browser-sync start --server --files='build/**/*'",
+    "build": "tsc src/index.ts --outDir build --target ESNEXT",
+    "build:live": "nodemon --exec npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.6.4",
+    "browser-sync": "^2.26.7",
+    "concurrently": "^5.0.0",
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  }
+}

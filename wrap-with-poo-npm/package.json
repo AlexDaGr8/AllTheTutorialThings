@@ -1,0 +1,18 @@
+{
+  "name": "coverage-badges",
+  "version": "0.1.0",
+  "description": "this package will take any strin gyou give it and wrap it with the poop emoji",
+  "main": "index.js",
+  "bin": {
+    "coverage-badges": "bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "npm"
+  ],
+  "author": "Al3xDaGr8",
+  "license": "MIT"
+}
